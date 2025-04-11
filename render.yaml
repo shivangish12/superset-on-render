@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: superset
+    env: docker
+    plan: free
+    branch: main
+    dockerfilePath: Dockerfile
+    envVars:
+      - value: "s3cr3tK3y_7hisSh0uLdBeR@ndom_1234567890"
+        value: "a_secure_random_string_here"
+      - key: MAPBOX_API_KEY
+        value: "pk.eyJ1Ijoic2hpdmFuZ2lzaCIsImEiOiJjbTlkMnAzbDgwOWN1MnFxdG93bDB4ZXNnIn0.vUxFmBm2QgBAMZp6rKe4ug"
