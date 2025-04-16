@@ -1,9 +1,11 @@
 FROM apache/superset:latest
 
 USER root
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
 
-# You can add any custom dependencies here
-# RUN pip install some-package
+COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+COPY superset_config.py /app/superset_config.py  # Add this line
 
-USER superset
+RUN chmod +x /app/docker-entrypoint.sh
+
+ENTRYPOINT ["/app/docker-entrypoint.sh"]

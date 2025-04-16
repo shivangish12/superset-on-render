@@ -1,0 +1,5 @@
+apache-superset==2.0.0
+gunicorn
+flask
+redis
+psycopg2
